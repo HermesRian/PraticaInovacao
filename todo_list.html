@@ -1,19 +1,26 @@
-<!DOCTYPE html> <!-- Define o tipo de documento como HTML5 -->
-<html lang="en"> <!-- Define o idioma da página como inglês -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres como UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a escala inicial de visualização e a largura para o dispositivo -->
-    <title>Lista de Tarefas</title> <!-- Define o título da página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <style>
+        .btn { margin-left: 10px; } /* Espaço entre os botões */
+    </style>
 </head>
 <body>
-    <div class="container"> <!-- Cria uma div com a classe container -->
-        <h1>Lista de Tarefas</h1> <!-- Cria um cabeçalho de nível 1 -->
-        <ul> <!-- Inicia uma lista não ordenada -->
-            {% for todo in object_list %} <!-- Inicia um loop sobre a lista de objetos 'todo' -->
-                <li>{{ todo.title }}</li> <!-- Cria um item de lista com o título do 'todo' -->
-            {% endfor %} <!-- Finaliza o loop -->
-        </ul> <!-- Finaliza a lista -->
-        <a href="{% url 'todo_create' %}">Adicionar Tarefa</a> <!-- Cria um link para adicionar uma nova tarefa -->
-    </div> <!-- Fecha a div container -->
+    <div class="container">
+        <h1>Lista de Tarefas</h1>
+        <ul>
+            {% for todo in object_list %}
+            <li>
+                {{ todo.title }} <!-- Mostra o título do todo -->
+                <a href="{% url 'todo_update' pk=todo.id %}" class="btn">Editar</a> <!-- Botão para editar a tarefa -->
+                <a href="{% url 'todo_delete' pk=todo.id %}" class="btn">Deletar</a> <!-- Botão para deletar a tarefa -->
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'todo_create' %}">Adicionar Tarefa</a> <!-- Link para adicionar uma nova tarefa -->
+    </div>
 </body>
 </html>

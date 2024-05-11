@@ -1,0 +1,15 @@
+{% block content %}
+
+<form method="post">
+
+    {% csrf token %}
+
+    <p>Tem certeza que deseja excluir? "{{object.title }}"?</p>
+
+    <button type="submit">Confirmar</button>
+
+    <a href="{% url 'todo_list' %}">Cancelar</a>
+
+</form>
+
+{% endblock %}

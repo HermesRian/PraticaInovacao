@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">      <!-- Define a codificação de caracteres da página -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">      <!-- Define a largura da tela para o layout responsivo -->
+    <title>Minha Aplicação</title>    <!-- Define o título da página -->
+</head>
+<body>
+    <nav>       <!-- Início da barra de navegação -->
+        <div>           <!-- Container da barra de navegação -->
+            <a href="#">Minha Aplicação</a>             <!-- Link para a página principal -->
+            <button>                <!-- Botão de menu para dispositivos móveis -->
+                <span></span>                   <!-- Ícone do botão de menu -->
+            </button>
+            <div id="navbarNav">                <!-- Conteúdo do menu de navegação -->
+                <ul>                    <!-- Lista não ordenada de itens de menu -->
+                    <li>                        <!-- Item de menu para a lista de tarefas -->
+                        <a href="{% url 'todo_list' %}">Lista de Tarefas</a>              <!-- Link para a página de lista de tarefas -->
+                    </li>                       <!-- Item de menu para adicionar uma nova tarefa -->
+                    <li>
+                        <a href="{% url 'todo_create' %}">Adicionar Tarefa</a>             <!-- Link para a página de criação de tarefas -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>      <!-- Fim da barra de navegação -->
+
+    <div>       <!-- Container principal para o conteúdo da página -->
+        {% block content %}         <!-- Bloco de conteúdo específico da página -->
+        {% endblock %}
+    </div>
+
+    <script></script>       <!-- Script para funcionalidades JavaScript -->
+</body>
+</html>

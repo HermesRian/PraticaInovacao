@@ -1,15 +1,23 @@
 {% block content %}
+  <!-- Bloco de conteúdo principal, pode ser substituído em templates derivados. -->
 
-<form method="post">
+  <form method="post">
+    <!-- Formulário com método POST para enviar dados de forma segura. -->
 
-    {% csrf token %}
+    {% csrf_token %}
+    <!-- Inclui token CSRF para proteção contra ataques CSRF. -->
 
-    <p>Tem certeza que deseja excluir? "{{object.title }}"?</p>
+    <p>Tem certeza que deseja excluir "{{ object.title }}"?</p>
+    <!-- Mensagem de confirmação de exclusão exibindo o título do objeto. -->
 
     <button type="submit">Confirmar</button>
+    <!-- Botão para confirmar a ação de exclusão. -->
 
     <a href="{% url 'todo_list' %}">Cancelar</a>
+    <!-- Link para cancelar a ação e retornar à lista de tarefas. -->
 
-</form>
+  </form>
+  <!-- Fim do formulário de exclusão. -->
 
 {% endblock %}
+<!-- Fim do bloco de conteúdo. -->

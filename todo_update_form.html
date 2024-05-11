@@ -1,0 +1,20 @@
+{% block content %}
+  <!-- Bloco de conteúdo substituível em templates derivados. -->
+
+  <form method="post">
+    <!-- Formulário com método POST para segurança de dados. -->
+
+    {% csrf_token %}
+    <!-- Inserção do token CSRF para proteger contra ataques CSRF. -->
+
+    {{ form.as_p }}
+    <!-- Renderização automática dos campos do formulário dentro de tags <p>. -->
+
+    <button type="submit">Atualizar</button>
+    <!-- Botão de envio do formulário com texto "Atualizar". -->
+
+  </form>
+  <!-- Fim do formulário. -->
+
+{% endblock %}
+<!-- Fim do bloco de conteúdo. -->

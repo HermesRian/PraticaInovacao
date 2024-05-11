@@ -1,0 +1,19 @@
+<!DOCTYPE html> <!-- Define o tipo de documento como HTML5 -->
+<html lang="en"> <!-- Define o idioma da página como inglês -->
+<head>
+    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a escala inicial de visualização e a largura para o dispositivo -->
+    <title>Adicionar tarefa</title> <!-- Define o título da página -->
+</head>
+<body>
+    
+    <div class="container"> <!-- Cria uma div com a classe container -->
+        <h1>Adicionar tarefa</h1> <!-- Cria um cabeçalho de nível 1 -->
+        <form method="post"> <!-- Cria um formulário com o método POST -->
+            {% csrf_token %} <!-- Adiciona um token CSRF para segurança -->
+            {{ form.as_p }} <!-- Renderiza o formulário com os campos como parágrafos -->
+            <button type="submit">Save</button> <!-- Cria um botão de envio do formulário -->
+        </form>
+    </div> <!-- Fecha a div container -->
+</body>
+</html>
